@@ -1,0 +1,19 @@
+ge-app-image{
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 15px;
+    ge-media-image {
+        width: 100%;
+        >.multimedia-container {
+            width: 100%;
+            height: 36vw;
+        }
+    }
+}
+
+/* TABLET */
+ion-app.fx-gt-sm {
+    ge-app-image{
+        padding-bottom: 25px;
+    }
+}

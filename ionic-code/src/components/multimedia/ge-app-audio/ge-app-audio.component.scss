@@ -1,0 +1,13 @@
+ge-app-audio{
+    width: 66%;
+    display: inline-block;
+    margin: 20px 17%;
+}
+
+/* TABLET */
+ion-app.fx-gt-sm {
+    ge-app-audio{
+        width: 44%;
+        margin: 20px 28%;
+    }
+}

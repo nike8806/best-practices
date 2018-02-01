@@ -1,0 +1,12 @@
+ge-app-video{
+   width:100%;
+   margin: 10px 0px;
+   display: inline-block;
+}
+
+/* TABLET */
+ion-app.fx-gt-sm {
+    ge-app-video{
+        margin: 20px 0px;
+    }
+}

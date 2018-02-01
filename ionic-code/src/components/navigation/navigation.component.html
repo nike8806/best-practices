@@ -1,0 +1,11 @@
+<div [ngClass]="page">
+<ion-tabs #myTabs>
+    <ion-tab 
+        *ngFor     = "let p of pages"
+        [attr.page]= "p.icon+'class'"
+        [tabIcon]  = "p.icon"
+        [tabTitle] = "p.title | translate"
+        [root]     = "p.component">
+    </ion-tab>
+</ion-tabs>
+</div>

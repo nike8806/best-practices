@@ -1,0 +1,361 @@
+navigation-component {
+    
+    .size-custom-icon {
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block;
+        color: transparent;
+        margin: 0 auto;
+        background-position-x: $icon-position-center;
+        height: 25px;
+        width: 25px;
+    }
+
+    .tab-button[aria-selected=true] .tab-button-icon,
+    .tab-button-icon {
+
+        &.icon {
+
+            &.icon-md,
+            &.icon-ios {
+                &.ion-ios-apps,
+                &.ion-md-apps,
+                &.ion-ios-apps-outline,
+                &.ion-ios-folder,
+                &.ion-md-folder,
+                &.ion-ios-folder-outline,
+                &.ion-ios-calendar,
+                &.ion-md-calendar,
+                &.ion-ios-calendar-outline,
+                &.ion-ios-person,
+                &.ion-md-person,
+                &.ion-ios-person-outline,
+                &.ion-ios-play,
+                &.ion-md-play,
+                &.ion-ios-play-outline {
+
+                    &:before {
+                        @extend .size-custom-icon;
+                    }
+                }
+            }
+        }
+    }
+
+    .tab-button{
+        .tab-button-text {
+            transition: none;
+            transform: none;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            text-align: center;
+        }
+    }
+
+    .tab-button[aria-selected=false] {
+        .tab-button-text {
+            opacity: 0.6;
+        }
+    }
+
+    .tab-button[aria-selected=true] {
+        opacity: 1;
+    }
+    
+    /*
+    * @TODO: This should be in the learn-and-play and skills pages scss file. Move from here 
+    */
+    .learn-and-play, 
+    .skills {
+        
+        .tab-button {
+
+            .tab-button-text {
+                transition: none;
+                transform: none;
+                opacity: 0.6;
+                color: map-get($complementary-colors, white);
+                margin:0;
+            }
+
+            .ion-ios-play,
+            .ion-md-play,
+            .ion-ios-play-outline{
+                &:before{
+                    background: url('../assets/img/menu/custom-learn-play-icon.svg');
+                }
+            }
+            
+            .ion-ios-apps,
+            .ion-md-apps,
+            .ion-ios-apps-outline {
+
+                &:before{
+                    background: url('../assets/img/menu/custom-skills-icon.svg');
+                }
+            }
+            
+            .ion-ios-folder,
+            .ion-md-folder,
+            .ion-ios-folder-outline {
+
+                &:before{
+                    background: url('../assets/img/menu/custom-resources-icon-gray.svg');
+                }
+            }
+            
+            .ion-ios-calendar,
+            .ion-md-calendar,
+            .ion-ios-calendar-outline {
+
+                &:before{
+                    background: url('../assets/img/menu/custom-calendar-icon-gray.svg');
+                }
+            }
+            
+            .ion-ios-person,
+            .ion-md-person,
+            .ion-ios-person-outline{
+
+                &:before{
+                    background: url('../assets/img/menu/custom-preferences-icon-gray.svg');
+                }
+            }
+        }
+
+        .tab-button[aria-selected=true] {
+            
+            .tab-button-text{
+                transition: none;
+                transform:none;
+                color: map-get($complementary-colors, white);
+            }
+            
+            .ion-ios-play,
+            .ion-md-play,
+            .ion-ios-play-outline{
+                &:before{
+                    background: url('../assets/img/menu/custom-learn-play-icon-active.svg');
+                }
+            }
+
+            .ion-ios-apps,
+            .ion-md-apps,
+            .ion-ios-apps-outline{
+                &:before{
+                    background: url('../assets/img/menu/custom-skills-icon-active.svg');
+                }
+            }
+        }
+    }
+
+    .tabs-md,
+    .tabs-ios {
+        border:none;
+        background: transparent;
+
+        .tab-button-icon {
+            margin: 0 0 5px;
+            height: 25px;
+        }
+
+        .tab-button-text{
+            font-weight: 300;
+        }
+
+        .ion-ios-apps,
+        .ion-md-apps,
+        .ion-ios-apps-outline{
+
+            &:before{
+                background: url('../assets/img/menu/custom-skills-icon-gray.svg');
+            }
+        }
+        
+        .ion-ios-folder,
+        .ion-md-folder,
+        .ion-ios-folder-outline{
+
+            &:before{
+                background: url('../assets/img/menu/custom-resources-icon.svg');
+            }
+        }
+        
+        .ion-ios-calendar,
+        .ion-md-calendar,
+        .ion-ios-calendar-outline{
+
+            &:before{
+                background: url('../assets/img/menu/custom-calendar-icon.svg');
+            }
+        }
+        
+        .ion-ios-play,
+        .ion-md-play,
+        .ion-ios-play-outline{
+
+            &:before{
+                background: url('../assets/img/menu/custom-learn-play-icon-gray.svg');
+            }
+        }
+        
+        .ion-ios-person,
+        .ion-md-person,
+        .ion-ios-person-outline{
+
+            &:before{
+                background: url('../assets/img/menu/custom-preferences-icon.svg');
+            }
+        }
+
+        .tab-button[aria-selected=true] .tab-button-icon, 
+        .tab-button[aria-selected=true] .tab-button-text {
+            -webkit-transition: none;
+            transform-origin: 0 0;
+            transform: none;
+        }
+        
+        .tab-button[aria-selected=true]{
+            .ion-ios-apps,
+            .ion-md-apps,
+            .ion-ios-apps-outline{
+                
+                &:before{
+                    background: url('../assets/img/menu/custom-skills-icon-active.svg');
+                }
+            }
+        }
+        
+        .tab-button[aria-selected=true]{
+            .ion-ios-folder,
+            .ion-md-folder,
+            .ion-ios-folder-outline{
+
+                &:before{
+                    background: url('../assets/img/menu/custom-resources-icon-active.svg');
+                }
+            }
+        }
+        
+        .tab-button[aria-selected=true]{
+            .ion-ios-calendar,
+            .ion-md-calendar,
+            .ion-ios-calendar-outline{
+
+                &:before{
+                    background: url('../assets/img/menu/custom-calendar-icon-active.svg');
+                }
+            }
+        }
+        
+        .tab-button[aria-selected=true]{
+            .ion-ios-person,
+            .ion-md-person,
+            .ion-ios-person-outline{
+
+                &:before{
+                    background: url('../assets/img/menu/custom-preferences-icon-active.svg');
+                }
+            }
+        }
+
+        button:hover:not(.disable-hover), 
+        .tab-button[aria-selected=true] {
+            color: map-get($primary-colors, first);
+        }
+    }
+    
+    .tab-button-text{
+        display:block;
+    }
+}
+
+.tabs-md[tabsPlacement="bottom"]{
+    >.tabbar {
+        &:before{
+            background:none;
+        }
+    }
+}
+
+.tabs-ios {
+    .tab-button {
+        padding: 0 2px;
+        max-width: 240px;
+        min-height: 49px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.platform-android {
+    .has-icon .tab-button-icon,
+    .has-title .tab-button-text {
+        display:flex;
+    }
+}
+
+.tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.tabs-md, .tabs-ios {
+    .tabbar {
+        border:none;
+        background: transparent;
+    }
+}
+
+
+
+/* SMARTHPHONE SMALL */
+ion-app.fx-xs {
+    
+    navigation-component {
+
+        .tabs-md, .tabs-ios {
+
+            &[tabsLayout=icon-top] .has-icon .tab-button-text {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+
+
+
+/* TABLET */
+ion-app.fx-gt-sm {
+
+    .enable-hover a:hover {
+        opacity: 1;
+    }
+
+    navigation-component {
+
+        .size-custom-icon {
+            height: 37px;
+            width: 37px;
+        }
+
+        .tabs-md, .tabs-ios {
+
+            .tab-button {
+            min-height: 80px;
+            }
+
+            .tab-button-icon{
+                height: 37px;
+                margin-bottom: 8px;
+            }
+
+            &[tabsLayout=icon-top] .has-icon .tab-button-text {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
