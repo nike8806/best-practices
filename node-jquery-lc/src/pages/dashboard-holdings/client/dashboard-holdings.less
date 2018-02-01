@@ -1,0 +1,219 @@
+// Imports
+@import (reference) "../../../../node_modules/ui-snowflake/snowflake.less";
+@import (reference) "../../../node_modules/rilix-style-guide/rilix-style-guide.less";
+
+/** TODO CREATE A TEMPLATE AND OMIT THIS OVERRIDES */
+@import  "./dashboard-holdings-layout-overrides.less";
+
+@import "./dashboard-holdings-media-queries.less";
+
+
+// LESS Variables
+@href-color: #42a2db;
+@contrast-color: #1e7eb6;
+@font-color: #404242;
+@title-color: #86a2b1;
+
+// Grade colors
+@color-a: #1592D4;
+@color-b: #82DBF0;
+@color-c: #00AF97;
+@color-d: #9ECE7B;
+@color-e: #E1E676;
+@color-f: #FCB813;
+@color-g: #FF8F00;
+@color-h: #DC7633;
+@color-i: #E74C3C;
+@color-j: #A569BD;
+@color-k: #ABB2B9;
+
+.holdings-page  {
+  font-family: sans-serif;
+  .page-header-section {
+    border-bottom: 1px solid rgb(226, 226, 226);
+  }
+
+  /* GLOBAL PAGE STYLES  */
+  h2 {
+    color: @title-color;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  a {
+    color: @href-color;
+    text-decoration: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    tr:nth-child(even) {
+      background-color: #edf3f3;
+    }
+    th {
+      text-align: left;
+      font-size: 14px;
+    }
+    td, th {
+      text-align: left;
+      &.notes-grouped-column{
+        width: 33%;
+      }
+    }
+  }
+
+  /* Color for cubes used in grades */
+  .cube {
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    font-family: Arial;
+    font-weight: bold;
+    display: inline-block;
+
+    &.colorA {
+      background-color: @color-a;
+    }
+    &.colorB {
+      background-color: @color-b;
+    }
+    &.colorC {
+      background-color: @color-c;
+    }
+    &.colorD {
+      background-color: @color-d;
+    }
+    &.colorE {
+      background-color: @color-e;
+    }
+    &.colorF {
+      background-color: @color-f;
+    }
+    &.colorG {
+      background-color: @color-g;
+    }
+    &.colorH {
+      background-color: @color-h;
+    }
+    &.colorI {
+      background-color: @color-i;
+    }
+    &.colorJ {
+      background-color: @color-j;
+    }
+    &.colorK {
+      background-color: @color-k;
+    }
+
+    .cube-text {
+      width: 20px;
+      height: 20px;
+      margin: 0px auto;
+      text-align: center;
+      display: inline-block;
+    }
+  }
+  
+  .holdings-section {
+    padding: 30px;
+  }
+  
+  /* Wrapper for aggregated notes tables */
+  .aggreated-notes-composition-wrapper {
+    table {
+      tr {
+        td {
+          line-height: 20px;
+
+          .cube {
+            float: left;
+            display: inherit;
+            margin-right: 10px;
+
+          }
+        }
+
+        td, th {
+          padding: 5px;
+        }
+      }
+    }
+
+    ul.tabs {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      list-style-type: none;
+
+      li {
+        float: left;
+        display: block;
+        color: #CAD8DE;
+
+        a {
+          font-size: 16px;
+          padding-right: 4px;
+          color: #077EB6;
+          text-decoration: none;
+          font-weight: bold;
+          cursor: pointer;
+
+          &.active, &:hover {
+            text-decoration: underline;
+          }
+        }
+
+      }
+    }
+
+    .tabcontent {
+      display: none;
+    }
+  }
+  /* Wrapper for all notes table */
+  .notes-details-wrapper {
+
+    table {
+      th {
+        color: @contrast-color;
+        cursor: pointer;
+        font-weight: bold;
+        border-bottom: 2px solid #c8d5da;
+      }
+      tr {
+        height: 60px;
+        padding: 7px 0;
+      }
+      td, th {
+        padding: 8px;
+      }
+    }
+
+    .notes-details-utils {
+
+      .paginator {
+        cursor: pointer;
+        margin: 5px;
+
+        i.arrow {
+          border: solid @href-color;
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 3px;
+
+          &.right {
+            transform: rotate(-45deg);
+          }
+
+          &.left {
+            transform: rotate(135deg);
+          }
+        }
+      }
+    }
+  }
+}

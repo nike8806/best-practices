@@ -1,0 +1,28 @@
+{{#partial "pageStyles"}}
+  {{LCStyle "dashboard-holdings"}}
+{{/partial}}
+
+{{#partial "content"}}
+  <main data-dashboard-holdings-page class="holdings-page">
+    {{> ui-components/page-header title="Holdings"}}
+    <section class="page-content-section padding-top-30 padding-bottom-40">
+      {{> ui-error-alert/ui-error-alert}}
+      {{>ui-notification-box/src/ui-notification-box}}
+
+      
+      {{#unless errorMessage.isShown}}
+      {{> dashboard-holdings/partials/aggregated-notes-tables}}
+        {{> dashboard-holdings/partials/notes-details-table}}
+      {{/unless}}
+    </section>
+  </main>    
+  {{#defineModule "aggregatedDataNotes"}}
+    {{{aggregatedDataNotesStr}}}
+  {{/defineModule}}
+{{/partial}}
+
+{{#partial "pageScripts"}}
+  {{LCScript "dashboard-holdings"}}
+{{/partial}}
+
+{{> base-layout/base-layout dashboard=true }}

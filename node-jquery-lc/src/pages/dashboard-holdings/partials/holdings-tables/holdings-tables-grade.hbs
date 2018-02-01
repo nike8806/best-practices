@@ -1,0 +1,29 @@
+<div class="col-sm-4 visible-sm">
+  <div id="chartGrade"></div>
+</div>
+<div class="col-sm-8">
+  <table>
+    <thead>
+      <tr>
+        <th class="text-left bold">Grade</th>
+        <th class="text-left bold">Notes</th>
+        <th class="text-right bold">$</th>
+        <th class="text-right bold">%</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each notesByGrade}}
+      <tr>
+        <td class="text-left bold">
+          <span class="cube {{style}}">
+            <span class="cube-text">{{@key}}</span>
+          </span>
+        </td>
+        <td class="text-left">{{noteCount}}</td>
+        <td class="text-right">{{currencyFormat dollarAmount}}</td>
+        <td class="text-right">{{percentageFormat percentage}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table> 
+</div>

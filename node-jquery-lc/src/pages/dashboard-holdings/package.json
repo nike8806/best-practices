@@ -1,0 +1,6 @@
+{
+  "name": "dashboard-holdings",
+  "main": "./server/dashboard-holdings-routes.js",
+  "browser": "./client/dashboard-holdings-client.js",
+  "style": "./client/dashboard-holdings.less"
+}

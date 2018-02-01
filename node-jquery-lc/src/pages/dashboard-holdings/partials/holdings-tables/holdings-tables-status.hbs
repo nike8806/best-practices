@@ -1,0 +1,53 @@
+<div class="col-sm-4 visible-sm">
+  <div id="chartStatus"></div>
+</div>
+<div class="col-sm-8">
+  <table>
+    <thead>
+      <tr>
+        <th class="text-left bold notes-grouped-column">Status</th>
+        <th class="text-left bold">Notes</th>
+        <th class="text-right bold">$</th>
+        <th class="text-right bold">%</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each notesByStatus.active.notesGrouped}}
+      <tr>
+        <td class="text-left">
+          <span class="cube {{style}}"></span>{{@key}}
+        </td>
+        <td class="text-left">{{noteCount}}</td>
+        <td class="text-right">{{currencyFormat dollarAmount}}</td>
+        <td class="text-right">{{percentageFormat percentage}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <br/>
+  <table>
+    <thead>
+      <tr>
+        <th class="text-left bold notes-grouped-column">No Longer Active</th>
+        <th class="text-left bold">Notes</th>
+        <th class="text-right bold">$</th>
+        <th class="text-right bold">%</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each notesByStatus.inActive.notesGrouped}}
+      <tr>
+        <td class="text-left">
+          <span class="cube {{style}}"></span>{{@key}}
+        </td>
+        
+        <td class="text-left">{{noteCount}}</td>
+        <td class="text-right">{{currencyFormat dollarAmount}}</td>
+        <td class="text-right">{{percentageFormat percentage}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</div>
+

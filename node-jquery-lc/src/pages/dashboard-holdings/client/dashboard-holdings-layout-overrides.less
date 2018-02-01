@@ -1,0 +1,45 @@
+@body-background: #F1F1F1;
+
+//base layout overrides
+.page-header {
+  max-width: 970px;
+}
+
+.page-main {
+  max-width: 970px;
+  border-radius: 8px;
+}
+
+.page-title {
+  border-radius: 8px 8px 0 0;
+}
+
+.page-footer {
+  max-width: 970px;
+}
+
+#com-footer {
+  background-color: @body-background !important;
+  & * {
+    color: #999999;
+  }
+}
+
+.icon-logo-footer {
+  background-image: url("../../../node_modules/ui-footer/images/lc-footer-logo.png");
+  background-size: 132px;
+  width: 135px;
+  height: 20px;
+}
+
+body {
+  background-color: @body-background;
+}
+
+.bg-body {
+  background-color: @body-background !important;
+}
+
+.form-control {
+  font-weight: 400;
+}

@@ -1,0 +1,28 @@
+<div class="col-sm-4 visible-sm">
+  <div id="chartTerm"></div>
+</div>
+<div class="col-sm-8">
+  <table>
+    <thead>
+      <tr>
+        <th class="text-left bold">Term</th>
+        <th class="text-left bold">Notes</th>
+        <th class="text-right bold">$</th>
+        <th class="text-right bold">%</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each notesByTerm}}
+      <tr>
+        <td class="text-left">
+          <span class="cube {{style}}"></span>{{@key}}
+        </td>
+        <td class="text-left">{{noteCount}}</td>
+        <td class="text-right">{{currencyFormat dollarAmount}}</td>
+        <td class="text-right">{{percentageFormat percentage}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+

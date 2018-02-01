@@ -1,0 +1,51 @@
+<section class="holdings-section notes-details-wrapper">
+    <div class='notes-details-utils clearfix'>
+        <span class="pull-left">
+            <h2 class="upper-title">All notes</h2>
+        </span>
+        <span class="pull-right padding-top-20">
+            <a id="csv-download" class="styled-href" href="/all-notes">Download CSV</a>
+        </span>
+    </div>
+    <table>
+         <thead>
+            <tr>
+                <th>Issued</th>
+                <th class="text-right">Invested</th>
+                <th class="text-right">Outstanding Principal</th>
+                <th class="filter">Grade | Interest</th>
+                <th class="filter text-right">Term</th>
+                <th class="filter text-right">Status</th>
+                <th class="text-right">LoanID | NoteID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each notes}}
+                <tr>
+                    <td>{{dateFormat this.issuedDate}}</td>
+                    <td class="text-right">{{currencyFormat this.noteAmount}}</td>
+                    <td class="text-right">{{currencyFormat this.outstandingPrincipal}}</td>
+                    <td>
+                        <span class="cube color{{this.gradeType}}">
+                            <span class="cube-text">
+                                {{this.grade}}
+                            </span>
+                        </span> | {{percentageFormat this.rate}}</td>
+                    <td class="text-right">{{this.term}} mo.</td>
+                    <td class="text-right">{{this.loanStatus}}</td>
+                    <td class="text-right">{{this.loanId}} | {{this.noteId}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <div class="notes-details-utils">
+        <div class="pagination pull-right">
+            <span class="paginator prev">
+                <i class="arrow left"></i>
+            </span>
+            <span class="paginator next">
+                <i class="arrow right"></i>
+            </span>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+<section class="holdings-section aggreated-notes-composition-wrapper">
+  <h2>Composition ($)</h2>
+  <ul class="tabs">
+    <li><a data-target-tab="tabStatus" class="active">Status</a> |</li>
+    <li><a data-target-tab="tabGrade">Grade</a> |</li>
+    <li><a data-target-tab="tabTerm">Term</a></li>
+  </ul>
+  <hr />
+  <div class="row tabcontent" id="tabStatus" data-target-composition-area data-is-default="true">
+    {{> dashboard-holdings/partials/holdings-tables/holdings-tables-status notesByStatus=aggregatedDataNotes.byStatus }}
+  </div>
+  <div class="row tabcontent" id="tabGrade"  data-target-composition-area>
+    {{> dashboard-holdings/partials/holdings-tables/holdings-tables-grade notesByGrade=aggregatedDataNotes.byGrade.notesGrouped }}
+  </div>
+  <div class="row tabcontent" id="tabTerm"   data-target-composition-area>
+    {{> dashboard-holdings/partials/holdings-tables/holdings-tables-term notesByTerm=aggregatedDataNotes.byTerm.notesGrouped}}
+  </div>
+</section>
