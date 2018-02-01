@@ -1,0 +1,62 @@
+<ion-content padding class="pane">
+    <div>
+        <!-- SECTION OF LOCKED MISSIONS-->
+        <div fxLayout="column"
+             fxLayoutAlign="none center">
+             <mission-item-locked
+                class = "card-locked-mission"
+                *ngFor = "let mission of avalaibleMissions.slice(3,5)">
+             </mission-item-locked>
+        </div>
+        <!-- SECTION OF READY MISSIONS -->
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <h3 class="light" text-center>
+                {{'LEARN_AND_PLAY.TODAY_MISSIONS' | translate }}
+            </h3>
+        </div>
+        <div fxLayout="row"
+             fxLayoutAlign="space-around start">
+                <button
+                    *ngFor ="let mission of avalaibleMissions.slice(0,3); let missionIndex = index;"
+                    (click)="showMissionModal(avalaibleMissions.slice(0,3), missionIndex)">
+                    <mission-item
+                        fxLayout="column"
+                        fxLayoutAlign="none center"
+                        [mission]="mission"
+                        class="card-mission-ready col">
+                    </mission-item>
+                </button>
+        </div>
+        <!-- SECTION OF COMPLETED MISSIONS -->
+        <div fxLayout="column"
+             fxLayoutAlign="none center">
+            <button
+                *ngFor ="let result of userResults"
+                (click)="showUserMissionResultModal([result])">
+                <mission-result [result]="result"></mission-result>
+            </button>
+            <div class="begin-history-container">
+                <ion-infinite-scroll
+                    (ionInfinite)="doInfinite($event)"
+                    *ngIf="!showBeginHistoryMessage">
+                    <ion-infinite-scroll-content
+                        loadingSpinner="bubbles"
+                        loadingText="{{'COMMON.LOADING' | translate}}">
+                    </ion-infinite-scroll-content>
+                </ion-infinite-scroll>
+                <div fxLayout="column" fxLayoutAlign="center center" class="end-learn-and-play"
+                    *ngIf="showBeginHistoryMessage">
+                    <div>
+                        <img src="./assets/modules/user-path/mission/img/custom-arrow-up.png"
+                             class="icon-arrow-up"/>
+                    </div>
+                    <div>
+                        <span class="user-path-end medium-text">
+                            {{'LEARN_AND_PLAY.BEGINNING_HISTORY' | translate}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

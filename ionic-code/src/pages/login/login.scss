@@ -1,0 +1,228 @@
+/* LOGIN */
+
+page-login {
+
+    section {
+        height: 100%;
+        background-image: url('../assets/pages/login/img/login-and-welcome-background.png');
+        background-size: cover;
+
+        figure {
+            text-align: center;
+            padding:0;
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+
+            img {
+                width: 153px;
+                @include margin-all(15px, null, 10px, null);
+            }
+        }
+
+        .appname-container {
+
+            span {
+                display: block;
+                font-size: 4.9rem;
+                color: map-get($complementary-colors, white);
+                font-family: $font-family-GE-serif;
+                text-transform: uppercase;
+            }
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        form {
+            width:90%;
+            
+            .login-btn-container {
+                margin-top:25%;
+            }
+
+            .item-ios,
+            .item-md{
+
+                @include padding-all(null, 35px, null, 35px);
+                background:transparent;
+                font-weight: 300;
+
+                &:nth-child(even){
+                    padding-top: 30px;
+                }
+
+                &.item-label-floating {
+
+                    .text-input,
+                    .text-input-md {
+                        color: map-get($complementary-colors, white);
+                        font-size: 1.7rem;
+                        width: 100%;
+                        margin-right: 0;
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                    }
+                }
+
+                &.item-block .item-inner {
+                    border-bottom: 1px solid map-get($complementary-colors, white);
+                }
+            }
+
+            .label-ios-white,
+            .label-md-white{
+                @include margin-all(17px, 0, null, null);
+                color: map-get($complementary-colors, white);
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                margin-top: 0;
+            }
+
+            .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, 
+            .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+                border-bottom: 1px solid map-get($complementary-colors, white);
+                box-shadow:none;
+                padding-right: 0;
+            }
+
+            .login-ge.item-md.item-input-has-focus .item-inner,
+            .login-ge.item.md.item-input.input-has-focus .item-inner,
+            .login-ge.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+                box-shadow: none;
+                border-bottom-color: map-get($complementary-colors, white);
+            }
+
+            .input-has-focus .label-md[stacked],
+            .input-has-focus .label-md[floating] {
+                color: map-get($complementary-colors, white);
+            }
+
+        }
+
+        footer {
+
+            div {
+                padding-bottom: 25px;
+
+                span {
+                    margin-top: 0;
+                    color: map-get($complementary-colors, white);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/* SMARTHPHONE SMALL */
+ion-app.fx-xs {
+
+    page-login {
+
+        section {
+
+            .appname-container {
+                
+                span {
+                    font-size: 3.8rem;
+                    line-height: 4.2rem;
+                }
+            }
+
+            form {
+
+                .login-btn-container {
+                    margin-top:23%;
+                }
+
+                .item-ios,
+                .item-md{
+
+                    &:nth-child(even){
+                        padding-top: 5px;
+                    }
+    
+                    &.item-label-floating {
+    
+                        .text-input,
+                        .text-input-md {
+                            font-size: 1.65rem;
+                        }
+                    }
+                }
+
+                .label-ios-white,
+                .label-md-white{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/* TABLET */
+ion-app.fx-gt-sm {
+    
+    page-login {
+
+        section {
+            background-image: url('../assets/pages/login/img/login-and-welcome-background-tablet.png');
+
+            figure {
+
+                img {
+                    width: 350px;
+                    margin-bottom: 15px;
+                }
+            }
+
+            .appname-container {
+
+                span {
+                    font-size: 7.3rem;
+                    line-height: 8.1rem;
+                }
+            }
+
+            form {
+                height: auto;
+                width: 75%;
+                margin-top: 45px;
+
+                .login-btn-container {
+                    margin-top:20%;
+                }
+            
+                .item-ios,
+                .item-md {
+
+                    &:nth-child(even){
+                        padding-top: 50px;
+                    }
+
+                    &.item-label-floating {
+
+                        .text-input,
+                        .text-input-md {
+                            font-size: 2.6rem;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+
+                .label-ios-white,
+                .label-md-white{
+                    font-size: 2.2rem;
+                }
+            }
+        }
+    }
+}

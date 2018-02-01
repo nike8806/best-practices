@@ -1,0 +1,62 @@
+ <section fxLayout="column" fxLayoutAlign="space-between stretch" >
+
+        <div fxFlex.sm="32" fxFlex.xs="36" fxFlex.md="38" fxLayout="column" fxLayoutAlign="end center">
+            <header>
+                <figure>
+                    <img src="./assets/pages/login/img/login-global-english-logo.png" />
+                </figure>
+                <div class="appname-container" text-center>
+                    <span>{{ appName }}</span>
+                </div>
+            </header>
+        </div>
+
+        <div fxFlex.sm="56" fxFlex.xs="54" fxFlex.md="52" fxLayoutAlign="center strech">
+            <form (ngSubmit) = "login(name, password)"
+                  #loginForm = "ngForm">
+                  
+                <div fxFlex>
+                    <ion-item class="login-ge">
+                        <ion-label color="white" floating>
+                            {{'LOGIN.USERNAME' | translate }}
+                        </ion-label>
+                        <ion-input [(ngModel)] = "name"
+                                   name = "username"
+                                   required>
+                        </ion-input>
+                    </ion-item>
+                    <ion-item class="login-ge">
+                        <ion-label color="white" floating>
+                            {{ 'LOGIN.PASSWORD' | translate }}
+                        </ion-label>
+                        <ion-input  type        = "password"
+                                    [(ngModel)] = "password"
+                                    name        = "userpassword"
+                                    required>
+                        </ion-input>
+                    </ion-item>
+                    <div class="login-btn-container">
+                    <button ion-button
+                            class       ="ge-btn default large"
+                            type        = "submit"
+                            block
+                            [disabled]  = "!loginForm.form.valid  || isMakingLoginRequest">
+                        {{'LOGIN.LOG_IN' | translate}}
+                    </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div fxFlex.sm="12" fxFlex.xs="10" fxFlex.md="10" fxLayout="column" fxLayoutAlign="end">
+            <footer>
+                <div text-center (click)="troubleWithLogin()">
+                    <span class="medium-text">{{'LOGIN.TROUBLE_LOG_IN' | translate}}</span>
+                </div>
+            </footer>
+        </div>
+
+    </section>
+    
+

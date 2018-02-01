@@ -1,0 +1,142 @@
+/* LEARN AND PLAY */
+
+$arrow-width-size: 74px / $scale;
+$arrow-height-size: 44px / $scale;
+
+page-learn-and-play{
+
+    button {
+        background: transparent;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pane {
+        background-image: url('../assets/pages/learn-and-play/img/custom-learn-and-play-background.png');
+        background-size: cover;
+    }
+
+    .h3,
+    [padding] h3:first-child{
+        @include center-block;
+        margin: 15px auto;
+        color: map-get($complementary-colors, white);
+        font-size: 5.0rem;
+        line-height: 5.4rem;
+    }
+
+    [padding] .user-path-end:first-child{
+        width: 60%;
+        margin: 20px auto 0;
+        font-weight: 600;
+        color: map-get($complementary-colors, white);
+        display: block;
+    }
+
+    .learn-play_heading{
+        width: 170px;
+        margin: 0 auto;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .begin-history-container {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 3%;
+
+        .infinite-loading-spinner {
+
+            .spinner-bubbles,
+            .spinner-circles,
+            .spinner-dots{
+
+                circle {
+                    fill: map-get($complementary-colors, white);
+                }
+            }
+        }
+
+        .infinite-loading-text{
+            color: map-get($complementary-colors, white);
+        }
+
+        .icon-arrow-up{
+            width: $arrow-width-size;
+            height: $arrow-height-size;
+        }
+    }
+
+    .end-learn-and-play {
+        padding-top: 20px;
+        opacity: 0.7;
+    }
+}
+
+
+
+
+/* TABLET */
+ion-app.fx-gt-sm {
+
+    page-learn-and-play{
+
+        .pane {
+            background-position-y: 100%;
+        }
+
+        $arrow-width-size: 74px / 2;
+        $arrow-height-size: 44px / 2;
+
+        .h3,
+        [padding] h3:first-child{
+            margin: 30px auto;
+        }
+
+        [padding] .user-path-end:first-child{
+            margin-top: 25px;
+        }
+
+        .begin-history-container {
+
+            .icon-arrow-up{
+                width: $arrow-width-size;
+                height: $arrow-height-size;
+            }
+        }
+    }
+}
+
+
+
+
+/* SMARTHPHONE SMALL */
+ion-app.fx-xs {
+
+    page-learn-and-play{
+
+        .h3,
+        [padding] h3:first-child{
+            font-size: 2.6rem;
+            line-height: 3.0rem;
+        }
+
+        .begin-history-container {
+
+            .icon-arrow-up{
+                width: 20px;
+                height: 10px;
+            }
+        }
+
+        [padding] .user-path-end:first-child{
+            margin-top: 15px;
+        }
+
+        .end-learn-and-play {
+            padding-top: 15px;
+        }
+    }
+}
