@@ -1,6 +1,6 @@
 # README #
 
-This Repository has the mission to explain, save and show some of the best development practices.
+This section show some code parts of the Investor project with LC
 
 ### SETUP ###
 
@@ -9,27 +9,14 @@ This Repository has the mission to explain, save and show some of the best devel
 ### This repository contains: ###
 
 * Parts of Code of some projects made with: 
-	* Ionic 3
-		* Angular 4
-		* SASS
-		* TypeScript
 	* Jquery
 	* Node
 	* LESS
-	* React
 
 * Contains:
 	* Unit Test	
-	* Functional Test
 
 ### Next Steps ###
-* Webpack confs
-* Docker confs
-* Design Patterns
-* Basic algoritms
-* Continous integration scripts
-* Code execution
-* etc...
 
 ### Version Tracking ###
 * Version 0.1
