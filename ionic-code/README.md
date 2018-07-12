@@ -1,6 +1,9 @@
 # README example...
 
-This README is only for example, is related to an hybrid application with Ionic
+This README is only for example, is related to an hybrid application with Ionic:
+[Reach app play store](https://play.google.com/store/apps/details?id=com.globalenglish.reach&hl=en_US)
+
+![Alt text](readme-files/reach-app.png?raw=true "Reach app")
 
 ## Instalation
 

@@ -2,40 +2,44 @@
 
 This Repository has the mission to explain, save and show some of the best development practices.
 
-### SETUP ###
-
-* At the moment is not possible to run code independently.
-
 ### This repository contains: ###
 
 * Parts of Code of some projects made with: 
-	* Ionic 3
+	* [ionic-code](./ionic-code)
+		* Ionic 3
 		* Angular 4
 		* SASS
 		* TypeScript
-	* Jquery
-	* Node
-	* LESS
-	* React
+	* [node-hbs-react](./node-hbs-react)
+		* React
+		* Node
+		* LESS
+		* Unit Test
+	* [node-jquery-lc](./node-jquery-lc)
+		* JQuery
+		* Node
+		* SASS & LESS
+		* Unit Test
 
-* Contains:
-	* Unit Test	
-	* Functional Test
+* Code examples of algorithms
 
-### Next Steps ###
-* Webpack confs
-* Docker confs
-* Design Patterns
-* Basic algoritms
-* Continous integration scripts
-* Code execution
+### Next changes: ###
+* Configurations
+	* Jenkins conf
+	* Webpack confs
+	* Docker confs
+	* Continous integration scripts
+* PHP Code (Symfony 2, Magento)
+* Best practices with 
+	* Design Patterns
+	* Basic algoritms
 * etc...
 
 ### Version Tracking ###
-* Version 0.1
+* Version 1.0
 * 2018
 
-### More information? ###
-
+### Author ###
 * Jaime Hernandez cruz
 * jhdezcruz@gmail.com
+* [Linkdin](http://www.linkedin.com/in/jaime-hernández-cruz-1ab2873b)

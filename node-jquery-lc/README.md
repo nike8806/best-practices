@@ -16,6 +16,9 @@ This section show some code parts of the Investor project with LC
 * Contains:
 	* Unit Test	
 
+### Pages included: ###
+![Alt text](readme-files/holdings-page.png?raw=true "Holdings page")
+
 ### Next Steps ###
 
 ### Version Tracking ###
