@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WorkEmail Confirmation Spec React component WorkEmailConfirmation render correctly 1`] = `
+<div
+  className="work-email-confirmation"
+>
+  <div
+    className="todo is-open"
+  >
+    <div
+      className="todo-wrapper"
+    >
+      <div
+        className="todo-body work-email-confirmation__body"
+      >
+        <div
+          className="work-email-confirmation__email-section"
+        >
+          <h1
+            className="work-email-confirmation__title"
+          >
+            Quickly and easily verify your employment
+          </h1>
+          <p>
+            The fastest way to verify your employment is to provide your work email from LendingClub. This email will only be used for verification purposes.
+          </p>
+          <WorkEmail
+            onSubmit={[Function]}
+          />
+          <p>
+            <b>
+              What happens next?
+            </b>
+          </p>
+          <ol>
+            <li>
+              We'll send you a one-time confirmation email (it might take a few seconds).
+            </li>
+            <li>
+              You click on the button in the email.
+            </li>
+            <li>
+              You're done!
+            </li>
+          </ol>
+          <p>
+            <button
+              className="button-link work-email-confirmation__btn-show-opt-out-section"
+              onClick={[Function]}
+            >
+              I'd rather not provide my work email
+            </button>
+            <br />
+          </p>
+          <p>
+            <button
+              className="button-link work-email-confirmation__btn-optout-do-not-have"
+              onClick={[Function]}
+            >
+              I don't have a work email
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

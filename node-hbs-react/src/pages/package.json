@@ -1,0 +1,6 @@
+{
+  "name": "work-email-confirmation",
+  "main": "work-email-confirmation-server.js",
+  "browser": "work-email-confirmation-client.js",
+  "style": "work-email-confirmation.less"
+}

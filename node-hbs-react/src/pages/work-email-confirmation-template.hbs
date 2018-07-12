@@ -1,0 +1,29 @@
+{{#partial "pageClass"}} {{/partial}}
+
+{{#partial "pageStyles"}}
+  {{LCStyle "common"}}
+  {{LCStyle "work-email-confirmation"}}
+{{/partial}}
+
+{{#partial "pageTitle"}}
+  Work Email Confirmation
+{{/partial}}
+
+{{#partial "pageDescription"}}
+  LendingClub | Confirm your employment by providing a work email address
+{{/partial}}
+
+{{#partial "content"}}
+<div class="page-main" data-todos-page>
+    {{> mini-header/mini-header-template}}
+    <div id="page-content" class ="work-email-confirmation-container"></div>
+  </div>
+{{/partial}}
+
+{{#partial "pageScripts"}}
+  {{LCScript "runtime"}}
+  {{LCScript "common"}}
+  {{LCScript "work-email-confirmation"}}
+{{/partial}}
+
+{{> base-layout/base-layout}}
