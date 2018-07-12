@@ -1,10 +1,10 @@
 # README example...
 
-In this section we have diferents techniques of algoritms
+In this section we have diferents techniques of algorithms and development practices and concepts.
 
 ## Content
+* Pure Functions
 * Dynamic programming
-
 * Fundamentals
 * Data Structures
 * Sorting
