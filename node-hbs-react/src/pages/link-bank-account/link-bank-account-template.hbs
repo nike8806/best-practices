@@ -1,0 +1,29 @@
+{{#partial "pageClass"}} {{/partial}}
+
+{{#partial "pageStyles"}}
+  {{LCStyle "common"}}
+  {{LCStyle "link-bank-account"}}
+{{/partial}}
+
+{{#partial "pageTitle"}}
+  Link your bank account
+{{/partial}}
+
+{{#partial "pageDescription"}}
+  LendingClub | Ensure your loan proceeds are deposited safely.
+{{/partial}}
+
+{{#partial "content"}}
+  <div class="page-main" data-todos-page>
+    {{> mini-header/mini-header-template}}
+    <div id="page-content"></div>
+  </div>
+{{/partial}}
+
+{{#partial "pageScripts"}}
+  {{LCScript "runtime"}}
+  {{LCScript "common"}}
+  {{LCScript "link-bank-account"}}
+{{/partial}}
+
+{{> base-layout/base-layout}}

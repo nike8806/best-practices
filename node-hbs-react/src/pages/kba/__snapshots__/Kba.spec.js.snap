@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KBA React component At mouting should render correctly 1`] = `
+<div
+  className="kba"
+>
+  <div
+    className="todo-body"
+  >
+    <React.Fragment>
+      <div
+        className="kba__main-section"
+      >
+        <h1
+          className="kba__title todo-heading"
+        >
+          Answer a few brief questions to keep your account safe
+        </h1>
+      </div>
+    </React.Fragment>
+  </div>
+  <Loader
+    theme="fixed"
+  />
+</div>
+`;
+
+exports[`KBA React component Fetching questions When response with an error should render correctly 1`] = `
+<div
+  className="kba"
+>
+  <div
+    className="todo-body"
+  >
+    <SuccessMessage
+      className="kba__outage-section"
+      subtitle="A member of our team will contact you."
+      title="Sorry, looks like we can't do this online"
+      withIcon={false}
+    >
+      <a
+        className="btn btn-todo"
+        href="/account/myAccount.action"
+      >
+        Return to task list
+      </a>
+    </SuccessMessage>
+  </div>
+</div>
+`;
+
+exports[`KBA React component Fetching questions With a success response With "REQUESTED" message should render correctly 1`] = `
+<Kba>
+  <div
+    className="kba"
+  >
+    <div
+      className="todo-body"
+    >
+      <SuccessMessage
+        className="kba__outage-section"
+        title="Sorry, looks like we can't do this online"
+        withIcon={false}
+      >
+        <div
+          className="success-message__container text-center kba__outage-section"
+        >
+          <h1
+            className="success-message__title todo-heading big"
+          >
+            Sorry, looks like we can't do this online
+          </h1>
+          <div
+            className="success-message__content"
+          >
+            <a
+              className="btn btn-todo"
+              href="/account/myAccount.action"
+            >
+              Return to task list
+            </a>
+          </div>
+        </div>
+      </SuccessMessage>
+    </div>
+  </div>
+</Kba>
+`;
+
+exports[`KBA React component Fetching questions With a success response With not "REQUESTED" message should render correctly 1`] = `
+<Kba>
+  <div
+    className="kba"
+  >
+    <div
+      className="todo-body"
+    >
+      <div
+        className="kba__main-section"
+      >
+        <h1
+          className="kba__title todo-heading"
+        >
+          Answer a few brief questions to keep your account safe
+        </h1>
+        <Question
+          answers={
+            Array [
+              "FULTON",
+              "APPANOOSE",
+              "LAFAYETTE",
+              "None of the above",
+            ]
+          }
+          disabled={false}
+          onAnswered={[Function]}
+          title="In which county have you lived?"
+          type="current.county.b"
+        >
+          <div
+            className="question"
+          >
+            <h5
+              className="question__title todo-heading"
+            >
+              In which county have you lived?
+            </h5>
+            <ul
+              className="question__answers margin-bottom-32 list-unstyled"
+            >
+              <li
+                className="question__answer"
+                key="current.county.b-FULTON"
+              >
+                <label
+                  className="question__answer-text"
+                >
+                  <input
+                    checked={false}
+                    className="question__answer-selection todo-radio"
+                    disabled={false}
+                    name="answer"
+                    onChange={[Function]}
+                    type="radio"
+                    value="FULTON"
+                  />
+                  <span
+                    className="question__answer-radio todo-radio-selector"
+                  />
+                  FULTON
+                </label>
+              </li>
+              <li
+                className="question__answer"
+                key="current.county.b-APPANOOSE"
+              >
+                <label
+                  className="question__answer-text"
+                >
+                  <input
+                    checked={false}
+                    className="question__answer-selection todo-radio"
+                    disabled={false}
+                    name="answer"
+                    onChange={[Function]}
+                    type="radio"
+                    value="APPANOOSE"
+                  />
+                  <span
+                    className="question__answer-radio todo-radio-selector"
+                  />
+                  APPANOOSE
+                </label>
+              </li>
+              <li
+                className="question__answer"
+                key="current.county.b-LAFAYETTE"
+              >
+                <label
+                  className="question__answer-text"
+                >
+                  <input
+                    checked={false}
+                    className="question__answer-selection todo-radio"
+                    disabled={false}
+                    name="answer"
+                    onChange={[Function]}
+                    type="radio"
+                    value="LAFAYETTE"
+                  />
+                  <span
+                    className="question__answer-radio todo-radio-selector"
+                  />
+                  LAFAYETTE
+                </label>
+              </li>
+              <li
+                className="question__answer"
+                key="current.county.b-None of the above"
+              >
+                <label
+                  className="question__answer-text"
+                >
+                  <input
+                    checked={false}
+                    className="question__answer-selection todo-radio"
+                    disabled={false}
+                    name="answer"
+                    onChange={[Function]}
+                    type="radio"
+                    value="None of the above"
+                  />
+                  <span
+                    className="question__answer-radio todo-radio-selector"
+                  />
+                  None of the above
+                </label>
+              </li>
+            </ul>
+            <button
+              className="btn btn-todo center-block question__next"
+              disabled={true}
+              onClick={[Function]}
+              type="button"
+            >
+              Next
+            </button>
+          </div>
+        </Question>
+      </div>
+    </div>
+  </div>
+</Kba>
+`;

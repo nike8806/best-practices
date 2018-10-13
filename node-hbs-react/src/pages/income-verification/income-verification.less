@@ -1,0 +1,48 @@
+@import '~todo-pages-ui/todo-pages-ui.less';
+@import '~mini-header/mini-header.less';
+@import '~components/Loader/Loader.less';
+@import '~components/SuccessMessage/SuccessMessage.less';
+@import './components/PlaidGallery.less';
+
+.income-verification__logo-container {
+  box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.44);
+  width: 150px;
+  height: 100px;
+  margin: 0 auto 32px auto;
+  text-align: center;
+}
+
+.income-verification__logo-container::before {
+  content: "";
+  width: 90%;
+  display: inline-block;
+}
+
+.income-verification__logo {
+  height: 60px;
+  background-position: center center;
+  background-size: 60px;
+  background-repeat: no-repeat;
+
+}
+
+.income-verification__logo--default {
+  background-image: url('./images/default-bank-logo.svg');
+}
+
+.income-verification__divisor {
+  margin-bottom: 30px;
+}
+
+.income-verification__divisor--choose {
+  border: 1px solid #f1f1f1;
+  display: inline-block;
+  margin-bottom: 0;
+  width: 41%;
+}
+
+.income-verification__divisor--legend {
+  color: #8b8b8b;
+  padding: 0 10px;
+  vertical-align: sub;
+}

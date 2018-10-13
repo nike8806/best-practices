@@ -1,0 +1,29 @@
+{{#partial "pageClass"}} {{/partial}}
+
+{{#partial "pageStyles"}}
+  {{LCStyle "common"}}
+  {{LCStyle "phone-verification"}}
+{{/partial}}
+
+{{#partial "pageTitle"}}
+  Phone verification
+{{/partial}}
+
+{{#partial "pageDescription"}}
+  LendingClub | Speak with a Lending Club Credit Specialist.
+{{/partial}}
+
+{{#partial "content"}}
+  <div class="page-main" data-todos-page>
+    {{> mini-header/mini-header-template}}
+    <div id="phone-verification"></div>
+  </div>
+{{/partial}}
+
+{{#partial "pageScripts"}}
+  {{LCScript "runtime"}}
+  {{LCScript "common"}}
+  {{LCScript "phone-verification"}}
+{{/partial}}
+
+{{> base-layout/base-layout}}

@@ -1,0 +1,6 @@
+{
+  "name": "link-bank-account",
+  "main": "link-bank-account-server.js",
+  "browser": "link-bank-account-client.js",
+  "style": "link-bank-account.less"
+}

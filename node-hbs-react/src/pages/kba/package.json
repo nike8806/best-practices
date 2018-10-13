@@ -1,0 +1,6 @@
+{
+  "name": "kba",
+  "main": "kba-server.js",
+  "browser": "kba-client.js",
+  "style": "kba.less"
+}

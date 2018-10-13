@@ -1,0 +1,31 @@
+{{#partial "pageClass"}} {{/partial}}
+
+{{#partial "pageStyles"}}
+  {{LCStyle "common"}}
+  {{LCStyle "kba"}}
+{{/partial}}
+
+{{#partial "pageTitle"}}
+  Verify your identity
+{{/partial}}
+
+{{#partial "pageDescription"}}
+  LendingClub | Answer some questions to verify your identity
+{{/partial}}
+
+{{#partial "content"}}
+  <div class="page-main" data-todos-page>
+
+    {{> mini-header/mini-header-template}}
+
+    <div id="page-content"></div>
+  </div>
+{{/partial}}
+
+{{#partial "pageScripts"}}
+  {{LCScript "runtime"}}
+  {{LCScript "common"}}
+  {{LCScript "kba"}}
+{{/partial}}
+
+{{> base-layout/base-layout}}

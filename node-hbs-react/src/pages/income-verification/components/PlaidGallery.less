@@ -1,0 +1,72 @@
+.plaid-gallery__bank-logo:hover,
+.plaid-gallery__find-bank:hover,
+.plaid-gallery__find-bank a:hover {
+  background-color: #f9f9f9;
+  color: #707884;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.plaid-gallery__bank-logo {
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  display: block;
+  margin: 2px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  height: 115px;
+}
+
+.plaid-gallery__find-bank {
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+}
+
+.plaid-gallery__bank-logo--chase {
+  background-image: url('../images/chase-logo.svg');
+}
+
+.plaid-gallery__bank-logo--wells {
+  background-image: url('../images/wells-fargo-logo.svg');
+}
+
+.plaid-gallery__bank-logo--bofa {
+  background-image: url('../images/bofa-logo.svg');
+}
+
+.plaid-gallery__bank-logo--pnc {
+  background-image: url('../images/pnc-logo.svg');
+}
+
+.plaid-gallery__bank-logo--us {
+  background-image: url('../images/us-bank-logo.svg');
+}
+
+.plaid-gallery__bank-logo--usaa {
+  background-image: url('../images/usaa-logo.svg');
+  background-size: 50%;
+}
+
+@media (min-width: 376px) and (max-width:767px) {
+  .plaid-gallery__bank-logo {
+      background-size: 40%;
+      height: 120px;
+  }
+
+  .plaid-gallery__bank-logo--usaa {
+      background-size: 26%;
+  }
+}
+
+@media (min-width: 768px) {
+  .plaid-gallery__bank-logo {
+      background-size: 55%;
+  }
+
+  .plaid-gallery__bank-logo--usaa {
+      background-size: 40%;
+  }
+}

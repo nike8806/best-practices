@@ -1,0 +1,287 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Bank Account container Mounting should render correctly 1`] = `
+<div
+  className="link-bank-account"
+>
+  <div
+    className="todo-body"
+  >
+    <div
+      className="link-bank-account__main-section"
+    >
+      <h1
+        className="todo-heading big"
+      >
+        Tell us where to deposit your loan proceeds
+      </h1>
+      <p
+        className="todo-text"
+      >
+        Link your bank account. Your money will be deposited in this account.
+      </p>
+      <div
+        className="padding-bottom-16"
+      >
+        <label
+          className="todo-text"
+          htmlFor="link-bank-account-firstname"
+        >
+          First Name
+        </label>
+        <Input
+          errorMessage={null}
+          id="link-bank-account-firstname"
+          inputClassName="link-bank-account__account-holder-first-name-input"
+          name="accountHolderFirstName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="padding-bottom-16"
+      >
+        <label
+          className="todo-text"
+          htmlFor="link-bank-account-lastname"
+        >
+          Last Name
+        </label>
+        <Input
+          errorMessage={null}
+          id="link-bank-account-lastname"
+          inputClassName="link-bank-account__account-holder-last-name-input"
+          name="accountHolderLastName"
+          onBlur={[Function]}
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="padding-bottom-32"
+      >
+        <label
+          className="todo-text"
+          htmlFor="link-bank-account-bank-name"
+        >
+          Bank Name
+        </label>
+        <Input
+          errorMessage={null}
+          id="link-bank-account-bank-name"
+          inputClassName="link-bank-account__institution-input"
+          name="institution"
+          onBlur={[Function]}
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <ul
+        className="link-bank-account__account-types nav-horizontal padding-left-0 margin-bottom-24"
+      >
+        <li
+          className="link-bank-account__account-type margin-all-0"
+        >
+          <input
+            checked={false}
+            className="link-bank-account__radio"
+            id="link-bank-account-type-checking"
+            name="accountType"
+            onChange={[Function]}
+            type="radio"
+            value="EXT_CHECKING"
+          />
+          <label
+            className="link-bank-account__account-type__label todo-text padding-left-10"
+            htmlFor="link-bank-account-type-checking"
+          >
+            Checking
+          </label>
+        </li>
+        <li
+          className="link-bank-account__account-type margin-all-0"
+        >
+          <input
+            checked={false}
+            className="link-bank-account__radio"
+            id="link-bank-account-type-savings"
+            name="accountType"
+            onChange={[Function]}
+            type="radio"
+            value="EXT_SAVINGS"
+          />
+          <label
+            className="link-bank-account__account-type__label todo-text padding-left-10"
+            htmlFor="link-bank-account-type-savings"
+          >
+            Savings
+          </label>
+        </li>
+      </ul>
+      <img
+        alt="Check sample showing routing number and account number positions"
+        className="img-responsive margin-bottom-32 center-block"
+        src="test-file-stub"
+      />
+      <div
+        className="padding-bottom-16"
+      >
+        <label
+          className="todo-text"
+          htmlFor="link-bank-account-routing-number"
+        >
+          Routing Number
+        </label>
+        <Input
+          errorMessage={null}
+          id="link-bank-account-routing-number"
+          inputClassName="link-bank-account__routing-number-input"
+          name="routingNumber"
+          onBlur={[Function]}
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="padding-bottom-16"
+      >
+        <label
+          className="todo-text"
+          htmlFor="link-bank-account-account-number"
+        >
+          Account Number
+        </label>
+        <Input
+          errorMessage={null}
+          id="link-bank-account-account-number"
+          inputClassName="link-bank-account__account-number-input"
+          name="accountNumber"
+          onBlur={[Function]}
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="padding-bottom-32"
+      >
+        <label
+          className="todo-text"
+          htmlFor="link-bank-account-confirm-account-number"
+        >
+          Confirm Account Number
+        </label>
+        <Input
+          errorMessage={null}
+          id="link-bank-account-confirm-account-number"
+          inputClassName="link-bank-account__confirm-account-number-input"
+          name="confirmAccountNumber"
+          onBlur={[Function]}
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+      </div>
+      <p
+        className="todo-text padding-bottom-16"
+      >
+        Clicking the box below constitutes your electronic signature to the authorization.
+      </p>
+      <div
+        className="padding-bottom-16 link-bank-account__agreement"
+      >
+        <input
+          checked={false}
+          className="link-bank-account__bank-account-agreement__checkbox"
+          id="link-bank-account-authorization-agreement"
+          name="bankAccountAgreement"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="link-bank-account__bank-account-agreement__label todo-text padding-left-10"
+          htmlFor="link-bank-account-authorization-agreement"
+        >
+          authorization to
+           
+          <a
+            className="todo-link"
+            href="https://www.lendingclub.com/info/borrower-bank-account-verification.action"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            verify your bank account
+          </a>
+          .
+        </label>
+      </div>
+      <div
+        className="padding-bottom-32 link-bank-account__agreement"
+      >
+        <input
+          checked={false}
+          className="link-bank-account__payment-agreement__checkbox"
+          id="link-bank-account-payment-agreement"
+          name="paymentAgreement"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="link-bank-account__payment-agreement__label padding-left-10"
+          htmlFor="link-bank-account-payment-agreement"
+        >
+          <span
+            className="todo-text"
+          >
+            your authorization to take payments
+             
+            <a
+              className="todo-link"
+              href="https://www.lendingclub.com/legal/authorization-for-automatic-payments"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              electronically
+            </a>
+             
+            from your bank account.
+          </span>
+        </label>
+         
+        <button
+          className="visible-inline btn-todo-link"
+          onClick={[Function]}
+          type="button"
+        >
+          Change this
+          <i
+            className="link-bank-account__payment-options-arrow todo-collapsable-arrow"
+          />
+        </button>
+      </div>
+      <button
+        className="btn btn-todo center-block link-bank-account__btn-submit"
+        onClick={[Function]}
+        type="button"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+`;
