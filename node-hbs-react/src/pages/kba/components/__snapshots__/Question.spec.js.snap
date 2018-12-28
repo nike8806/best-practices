@@ -18,11 +18,13 @@ exports[`KBA Question component should render correctly 1`] = `
     >
       <label
         className="question__answer-text"
+        htmlFor="current.county.b-FULTON-id"
       >
         <input
           checked={false}
           className="question__answer-selection todo-radio"
           disabled={false}
+          id="current.county.b-FULTON-id"
           name="answer"
           onChange={[Function]}
           type="radio"
@@ -40,11 +42,13 @@ exports[`KBA Question component should render correctly 1`] = `
     >
       <label
         className="question__answer-text"
+        htmlFor="current.county.b-APPANOOSE-id"
       >
         <input
           checked={false}
           className="question__answer-selection todo-radio"
           disabled={false}
+          id="current.county.b-APPANOOSE-id"
           name="answer"
           onChange={[Function]}
           type="radio"
@@ -62,11 +66,13 @@ exports[`KBA Question component should render correctly 1`] = `
     >
       <label
         className="question__answer-text"
+        htmlFor="current.county.b-LAFAYETTE-id"
       >
         <input
           checked={false}
           className="question__answer-selection todo-radio"
           disabled={false}
+          id="current.county.b-LAFAYETTE-id"
           name="answer"
           onChange={[Function]}
           type="radio"
@@ -84,11 +90,13 @@ exports[`KBA Question component should render correctly 1`] = `
     >
       <label
         className="question__answer-text"
+        htmlFor="current.county.b-None of the above-id"
       >
         <input
           checked={false}
           className="question__answer-selection todo-radio"
           disabled={false}
+          id="current.county.b-None of the above-id"
           name="answer"
           onChange={[Function]}
           type="radio"

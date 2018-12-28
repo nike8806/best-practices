@@ -1,16 +1,17 @@
 import React from 'react';
 import Enzyme, { mount, shallow } from 'enzyme';
 import axios from 'lc-axios';
+import { SuccessMessage, Loader, Modal } from 'components';
+import Adapter from 'enzyme-adapter-react-16';
 import Kba from './Kba';
 import Question from './components/Question';
-import { SuccessMessage, Loader, Modal } from 'components';
 import mockQuestions from './mockQuestions.json';
-mockQuestions.questions = (mockQuestions.questions && mockQuestions.questions.question) || [];
 // TODO: Put this configuration in just one place
-import Adapter from 'enzyme-adapter-react-16';
+
+mockQuestions.questions = (mockQuestions.questions && mockQuestions.questions.question) || [];
 Enzyme.configure({ adapter: new Adapter() });
 
-const questions = mockQuestions.questions;
+const { questions } = mockQuestions;
 const mockSelectedAnswers = [
   { type: 'current.county.b', answer: 'FULTON' },
   { type: 'previous.address', answer: '3 CRESSING CT' },
@@ -23,7 +24,7 @@ const mainSectionSelector = '.kba__main-section';
 const doneSectionSelector = '.kba__done-section';
 
 
-describe.only('KBA React component', () => {
+describe('KBA React component', () => {
   describe('At mouting', () => {
     let component;
 
@@ -39,7 +40,7 @@ describe.only('KBA React component', () => {
       expect(component.find(Loader).length).toBe(1);
     });
 
-    it('should trigger an AJAX call to fetch questions', async() => {
+    it('should trigger an AJAX call to fetch questions', async () => {
       axios.get = jest.fn().mockResolvedValue({});
 
       await component.instance().componentDidMount();
@@ -58,7 +59,7 @@ describe.only('KBA React component', () => {
 
     it('The modal should be closed when the user click outside', () => {
       component.setState({ errorMessage: 'ERROR' });
-      let modalInstance = component.update().find(Modal);
+      const modalInstance = component.update().find(Modal);
       expect(modalInstance.length).toBe(1);
       modalInstance.find('.modal-backdrop').first().simulate('click', { preventDefault() { } });
       expect(component.update().find(Modal).length).toBe(0);
@@ -76,7 +77,7 @@ describe.only('KBA React component', () => {
     describe('When response with an error', () => {
       let component;
 
-      beforeEach(async() => {
+      beforeEach(async () => {
         component = shallow(<Kba />);
         axios.get = jest.fn().mockRejectedValue({ response: {} });
 
@@ -103,7 +104,7 @@ describe.only('KBA React component', () => {
     describe('With a success response', () => {
       describe('With "REQUESTED" message', () => {
         let component;
-        beforeEach(async() => {
+        beforeEach(async () => {
           const requestedMock = { data: { ...mockQuestions, message: 'REQUESTED' } };
           axios.get = jest.fn().mockResolvedValue(requestedMock);
           component = mount(<Kba />);
@@ -125,7 +126,7 @@ describe.only('KBA React component', () => {
       });
       describe('With not "REQUESTED" message', () => {
         let component;
-        beforeEach(async() => {
+        beforeEach(async () => {
           axios.get = jest.fn().mockResolvedValue({ data: mockQuestions });
           component = mount(<Kba />);
 
@@ -144,7 +145,7 @@ describe.only('KBA React component', () => {
         it('should keep track of current question in the state', () => {
           const randomAnsweredQuestions = Math.floor(Math.random() * questions.length) + 1;
 
-          for (let i = 0; i < randomAnsweredQuestions; i++) {
+          for (let i = 0; i < randomAnsweredQuestions; i += 1) {
             component.find('input[type="radio"]').at(0).simulate('change');
             component.find('button').simulate('click');
           }
@@ -170,7 +171,7 @@ describe.only('KBA React component', () => {
         });
 
         it('should change the current state between questions until all questions are answered', () => {
-          for (let i = 1; i <= questions.length; i++) {
+          for (let i = 1; i <= questions.length; i += 1) {
             component.find('input[type="radio"]').at(0).simulate('change');
             component.find('button').simulate('click');
 
@@ -205,7 +206,7 @@ describe.only('KBA React component', () => {
 
           axios.post = jest.fn().mockResolvedValue({});
 
-          for (let i = 0; i < questions.length; i++) {
+          for (let i = 0; i < questions.length; i += 1) {
             component.find('input[type="radio"]').at(0).simulate('change');
             component.find('button').simulate('click');
           }
@@ -257,7 +258,7 @@ describe.only('KBA React component', () => {
       const answersResponse = { state: 'DONE' };
       beforeEach(() => {
         axios.get = jest.fn().mockResolvedValue({ data: mockQuestions });
-        axios.post = jest.fn().mockResolvedValue({ data: answersResponse});
+        axios.post = jest.fn().mockResolvedValue({ data: answersResponse });
 
         component = shallow(<Kba />);
 
@@ -327,7 +328,7 @@ describe.only('KBA React component', () => {
       let component;
       beforeEach(() => {
         axios.get = jest.fn().mockResolvedValue({ data: mockQuestions });
-        axios.post = jest.fn().mockResolvedValue({ data: { state: 'COMPLETED'} } );
+        axios.post = jest.fn().mockResolvedValue({ data: { state: 'COMPLETED' } });
 
         component = shallow(<Kba />);
 

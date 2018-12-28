@@ -1,8 +1,0 @@
-{
-  "errors": [{
-    "field": null,
-    "code": "KBA_INVALID_ANSWERS",
-    "message": "Invalid KBA answers",
-    "recoverability": "Not Recoverable"
-  }]
-}

@@ -16,6 +16,7 @@ class Question extends Component {
   };
 
   state = {
+    // eslint-disable-next-line react/destructuring-assignment, react/no-unused-state
     type: this.props.type,
     answer: null
   };
@@ -42,16 +43,15 @@ class Question extends Component {
 
   /**
    * Invoque prop callback and clear state when clicking Next
-   *
-   * @param {SyntheticEvent} event The React `SyntheticEvent`
    */
-  handleNextClick = (event) => {
+  handleNextClick = () => {
     const { onAnswered, type } = this.props;
 
     if (onAnswered) {
+      const { answer } = this.state;
       onAnswered({
         type,
-        answer: this.state.answer
+        answer
       });
     }
   };
@@ -62,30 +62,37 @@ class Question extends Component {
    * @return {ReactElement}
    */
   render() {
-    const { title, type, answers, disabled } = this.props;
+    const {
+      title, type, answers, disabled
+    } = this.props;
+
     const { answer: currentAnswer } = this.state;
     return (
       <div className="question">
         <h5 className="question__title todo-heading">{title}</h5>
 
         <ul className="question__answers margin-bottom-32 list-unstyled">
-        { answers.map(answer => (
-          <li key={`${type}-${answer}`} className="question__answer">
-            <label className="question__answer-text">
-              <input
-                type="radio"
-                name="answer"
-                value={answer}
-                className="question__answer-selection todo-radio"
-                checked={currentAnswer === answer}
-                onChange={this.handleAnswer}
-                disabled={disabled}
-              />
-              <span className="question__answer-radio todo-radio-selector"/>
-              {answer}
-            </label>
-          </li>
-        )) }
+          {answers.map(answer => (
+            <li key={`${type}-${answer}`} className="question__answer">
+              <label
+                className="question__answer-text"
+                htmlFor={`${type}-${answer}-id`}
+              >
+                <input
+                  id={`${type}-${answer}-id`}
+                  type="radio"
+                  name="answer"
+                  value={answer}
+                  className="question__answer-selection todo-radio"
+                  checked={currentAnswer === answer}
+                  onChange={this.handleAnswer}
+                  disabled={disabled}
+                />
+                <span className="question__answer-radio todo-radio-selector" />
+                {answer}
+              </label>
+            </li>
+          ))}
         </ul>
 
         <button

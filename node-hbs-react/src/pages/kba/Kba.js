@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'lc-axios';
+import {
+  Timeout, SuccessMessage, Loader, Modal
+} from 'components';
 import Question from './components/Question';
-import { Timeout, SuccessMessage, Loader, Modal } from 'components';
 
 const DONE_MESSAGES = {
-  'DONE': 'Thank you. We have verified your identity',
-  'DONE_NEED_INFORMATION': 'Thank you. We will be in touch if we need additional information'
+  DONE: 'Thank you. We have verified your identity',
+  DONE_NEED_INFORMATION: 'Thank you. We will be in touch if we need additional information'
 };
 
 const OUTAGE_MESSAGES = {
@@ -37,7 +39,7 @@ class Kba extends Component {
 
   componentDidMount() {
     axios.get('/todo/kba/questions')
-      .then(response => {
+      .then((response) => {
         if (response.data.message === 'REQUESTED') {
           this.setState({
             showLoader: false,
@@ -52,7 +54,7 @@ class Kba extends Component {
           });
         }
       })
-      .catch(error => {
+      .catch(() => {
         this.setState({
           showSection: 'OUTAGE_ERROR',
           showLoader: false
@@ -62,12 +64,16 @@ class Kba extends Component {
 
   handleQuestionAnswered = (selection) => {
     this.setState(
-      (prevState) => ({
-        answers: [ ...prevState.answers, selection ],
-        currentQuestionIndex: prevState.currentQuestionIndex + 1
+      ({ answers, currentQuestionIndex }) => ({
+        answers: [...answers, selection],
+        currentQuestionIndex: currentQuestionIndex + 1
       }),
       () => {
-        if (this.state.currentQuestionIndex >= this.state.questions.length) {
+        const {
+          currentQuestionIndex,
+          questions
+        } = this.state;
+        if (currentQuestionIndex >= questions.length) {
           this.setState({
             showLoader: true,
             errorMessage: null
@@ -79,8 +85,16 @@ class Kba extends Component {
     );
   };
 
+  handleDismissModal = () => {
+    this.setState({
+      errorMessage: ''
+    });
+  };
+
   submitAnswers() {
-    const { answers, loanId, idNumber, currentQuestionIndex } = this.state;
+    const {
+      answers, loanId, idNumber, currentQuestionIndex
+    } = this.state;
 
     const payload = {
       loanId,
@@ -89,14 +103,14 @@ class Kba extends Component {
       }
     };
 
-    answers.forEach(({answer, type}, index) => {
+    answers.forEach(({ answer, type }, index) => {
       payload.idquestionnaireAnswers[`question${index + 1}Type`] = type;
       payload.idquestionnaireAnswers[`question${index + 1}Answer`] = answer;
     });
 
     axios.post('/todo/kba/answers', payload)
-      .then(response => {
-        const {data: responseData} = response || {};
+      .then((response) => {
+        const { data: responseData } = response || {};
         const {
           state: stateResponse = 'COMPLETED'
         } = responseData || {};
@@ -105,29 +119,29 @@ class Kba extends Component {
 
         switch (stateResponse) {
           case 'DONE':
-          newState = {
-            questions: [],
-            showSection: 'DONE'
-          };
-          break;
+            newState = {
+              questions: [],
+              showSection: 'DONE'
+            };
+            break;
 
           case 'PENDING':
-          newState = {
-            questions: responseData.questions,
-            currentQuestionIndex: 0,
-            answers: [],
-            showSection: 'MAIN'
-          };
-          break;
+            newState = {
+              questions: responseData.questions,
+              currentQuestionIndex: 0,
+              answers: [],
+              showSection: 'MAIN'
+            };
+            break;
 
           case 'COMPLETED':
-          newState = {
-            questions: [],
-            answers: [],
-            showSection: 'DONE_NEED_INFORMATION'
-          };
+            newState = {
+              questions: [],
+              answers: [],
+              showSection: 'DONE_NEED_INFORMATION'
+            };
 
-          break;
+            break;
           default:
             newState = {
               errorMessage: 'Sorry, we are having technical difficulties. Please try again later.',
@@ -142,7 +156,7 @@ class Kba extends Component {
           showLoader: false
         });
       })
-      .catch(error => {
+      .catch(() => {
         this.setState({
           errorMessage: 'Sorry, we are having technical difficulties. Please try again later.',
           answers: answers.slice(0, -1),
@@ -152,14 +166,10 @@ class Kba extends Component {
       });
   }
 
-  handleDismissModal = () => {
-    this.setState({
-      errorMessage: ''
-    });
-  };
-
   render() {
-    const { questions, currentQuestionIndex, errorMessage, showLoader, showSection } = this.state;
+    const {
+      questions, currentQuestionIndex, errorMessage, showLoader, showSection
+    } = this.state;
     const isDone = questions.length > 0 && currentQuestionIndex >= questions.length;
     const question = isDone ? questions[questions.length - 1] : questions[currentQuestionIndex];
     const doneMessage = DONE_MESSAGES[showSection];

@@ -1,6 +1,0 @@
-{
-  "name": "phone-verification",
-  "main": "phone-verification-server.js",
-  "browser": "phone-verification-client.js",
-  "style": "phone-verification.less"
-}

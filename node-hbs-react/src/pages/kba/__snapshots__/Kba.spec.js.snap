@@ -59,6 +59,7 @@ exports[`KBA React component Fetching questions With a success response With "RE
     >
       <SuccessMessage
         className="kba__outage-section"
+        subtitle={null}
         title="Sorry, looks like we can't do this online"
         withIcon={false}
       >
@@ -134,11 +135,13 @@ exports[`KBA React component Fetching questions With a success response With not
               >
                 <label
                   className="question__answer-text"
+                  htmlFor="current.county.b-FULTON-id"
                 >
                   <input
                     checked={false}
                     className="question__answer-selection todo-radio"
                     disabled={false}
+                    id="current.county.b-FULTON-id"
                     name="answer"
                     onChange={[Function]}
                     type="radio"
@@ -156,11 +159,13 @@ exports[`KBA React component Fetching questions With a success response With not
               >
                 <label
                   className="question__answer-text"
+                  htmlFor="current.county.b-APPANOOSE-id"
                 >
                   <input
                     checked={false}
                     className="question__answer-selection todo-radio"
                     disabled={false}
+                    id="current.county.b-APPANOOSE-id"
                     name="answer"
                     onChange={[Function]}
                     type="radio"
@@ -178,11 +183,13 @@ exports[`KBA React component Fetching questions With a success response With not
               >
                 <label
                   className="question__answer-text"
+                  htmlFor="current.county.b-LAFAYETTE-id"
                 >
                   <input
                     checked={false}
                     className="question__answer-selection todo-radio"
                     disabled={false}
+                    id="current.county.b-LAFAYETTE-id"
                     name="answer"
                     onChange={[Function]}
                     type="radio"
@@ -200,11 +207,13 @@ exports[`KBA React component Fetching questions With a success response With not
               >
                 <label
                   className="question__answer-text"
+                  htmlFor="current.county.b-None of the above-id"
                 >
                   <input
                     checked={false}
                     className="question__answer-selection todo-radio"
                     disabled={false}
+                    id="current.county.b-None of the above-id"
                     name="answer"
                     onChange={[Function]}
                     type="radio"

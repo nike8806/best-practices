@@ -1,6 +1,0 @@
-{
-  "name": "income-verification",
-  "main": "income-verification-server.js",
-  "browser": "income-verification-client.js",
-  "style": "income-verification.less"
-}

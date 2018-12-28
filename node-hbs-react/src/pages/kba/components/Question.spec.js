@@ -1,10 +1,10 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
+// TODO: Put this configuration in just one place
+import Adapter from 'enzyme-adapter-react-16';
 import Question from './Question';
 import mockQuestions from '../mockQuestions.json';
 
-// TODO: Put this configuration in just one place
-import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
 
 const question = mockQuestions.questions.question[0];
@@ -17,7 +17,12 @@ describe('KBA Question component', () => {
     handleAnswer = jest.fn();
 
     component = shallow(
-      <Question type={question.type} title={question.prompt} answers={question.answer} onAnswered={handleAnswer} />
+      <Question
+        type={question.type}
+        title={question.prompt}
+        answers={question.answer}
+        onAnswered={handleAnswer}
+      />
     );
   });
 

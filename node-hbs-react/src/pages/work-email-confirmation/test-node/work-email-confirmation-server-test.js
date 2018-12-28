@@ -1,7 +1,5 @@
 
-'use strict';
-
-const assert = require('chai').assert;
+const { assert } = require('chai');
 const sinon = require('sinon');
 const proxyquire = require('proxyquire');
 const fixtures = require('../../../../test-helper');
@@ -10,6 +8,9 @@ let mock;
 const submitClientStub = sinon.stub();
 const optOutClientStub = sinon.stub();
 const getStatusClientStub = sinon.stub();
+const loggerErrorStub = sinon.stub();
+const loggerInfoStub = sinon.stub();
+const loggerWarnStub = sinon.stub();
 const errorServiceMock = {
   errors: [
     {
@@ -26,7 +27,7 @@ describe('Work Email Confirmation Server', () => {
   before(() => {
     const server = proxyquire('../work-email-confirmation-server.js', {
       'lc-app-config': {
-        'autoRoutes': {ACCOUNT: '/sfasdasd'},
+        autoRoutes: { ACCOUNT: '/sfasdasd' },
         'services.todoOrch.host': '/sdfsdfadsf',
         'services.todoOrch.resendEmailPath': '/fskjdfasdf',
         'services.todoOrch.statusWorkEmailPath': '/status'
@@ -37,6 +38,11 @@ describe('Work Email Confirmation Server', () => {
           submitWorkEmail: submitClientStub,
           optOut: optOutClientStub
         };
+      },
+      'lc-logger': {
+        error: loggerErrorStub,
+        info: loggerInfoStub,
+        warn: loggerWarnStub
       }
     });
 
@@ -76,11 +82,24 @@ describe('Work Email Confirmation Server', () => {
       assert.isTrue(mock.res.redirect.calledWith(302), 'Was not redirected');
     });
 
-    it('should render error template if error is present', () => {
-
-      getStatusClientStub.callsArgWith(1, errorServiceMock, null );
+    it('should render error template and log error if error is present', () => {
+      loggerErrorStub.reset();
+      getStatusClientStub.callsArgWith(1, errorServiceMock, null);
       fixtures.getMethodForRoute('/')(mock.req, mock.res);
 
+      assert.isTrue(loggerErrorStub.calledOnce);
+      assert.isTrue(mock.res.render.calledOnce);
+      assert.isTrue(mock.res.render.calledWith('error/error'));
+    });
+
+    it('should render error template and log warn if task not found is present', () => {
+      loggerWarnStub.reset();
+      getStatusClientStub.callsArgWith(1, {
+        code: 'TASK_NOT_FOUND'
+      }, null);
+      fixtures.getMethodForRoute('/')(mock.req, mock.res);
+
+      assert.isTrue(loggerWarnStub.calledOnce);
       assert.isTrue(mock.res.render.calledOnce);
       assert.isTrue(mock.res.render.calledWith('error/error'));
     });
@@ -109,9 +128,11 @@ describe('Work Email Confirmation Server', () => {
           },
           user: {
             getTodo() {
-              return { links: {
-                send: '/work_email_verification/lists/LISTGUID/tasks/TASKGUID/submit?extId=EXTERNALID'
-              }};
+              return {
+                links: {
+                  send: '/work_email_verification/lists/LISTGUID/tasks/TASKGUID/submit?extId=EXTERNALID'
+                }
+              };
             }
           }
         });

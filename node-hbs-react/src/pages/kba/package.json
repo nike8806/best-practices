@@ -2,5 +2,8 @@
   "name": "kba",
   "main": "kba-server.js",
   "browser": "kba-client.js",
-  "style": "kba.less"
+  "style": "kba.less",
+  "eslintConfig": {
+    "extends": "../../../.eslintrc-es6.js"
+  }
 }
